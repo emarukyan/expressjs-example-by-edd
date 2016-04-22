@@ -1,11 +1,5 @@
-var express = require('express'),
-	router = express.Router(),
-	app = module.exports = express();
+var express = require('express')
+var app = module.exports = express()
 
-
-var index = require('./index'),
-	users = require('./users');	
-
-
-app.use('/', index);
-app.use('/users', users);
+app.use('/', require('./index'))
+app.use('/users', require('./users'))
