@@ -4,20 +4,35 @@ var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var passport = require('passport')
+var session = require('express-session')
+var flash = require('express-flash')
 
 var app = express()
+
+var conf = require(__dirname + '/config/config.json')[app.get('env')]
+app.set('conf', conf)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
-// uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(flash())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.use(session({
+  secret: 'a@*#-4VHWA131231S@2123908jslKDJ)',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/', require('./routes/v1'))
 

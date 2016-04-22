@@ -1,16 +1,13 @@
 {
 	"development": {
 		"mysql": {
-			"mysqlConnectionString": "mysql://USER_NAME:PASS_WORD@localhost:3306/DB_NAME",
-			"host": "localhost",
-			"user": "",
-			"password": "",
-			"port": "",
-			"database": ""
-		}
+			"mysqlConnectionString": "mysql://root:mroot@localhost:3306/armacad"
+		},
+    "FACEBOOK_APP_ID": "119933965939",
+    "FACEBOOK_APP_SECRET": "e71172537c3b2c746db55ad9e6bd0519"
 	},
 
 	"production": {
-		
+
 	}
 }
