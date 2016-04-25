@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Log In
+
+  form(method='post', action='/auth/login')
+    .form-group
+      label(for='email') Email address
+      input#email.form-control(type='email', name='email', placeholder='Email')
+    .form-group
+      label(for='pass') Password
+      input#pass.form-control(type='password', name='password', placeholder='Password')
+    .checkbox
+      label
+        input(type='checkbox')
+        |  Remember Me
+    button.btn.btn-default(type='submit') Log In
