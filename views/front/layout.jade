@@ -13,93 +13,30 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='#') Armacad
+          a.navbar-brand(href='#') Company
         // Collect the nav links, forms, and other content for toggling
         .collapse.navbar-collapse
           ul.nav.navbar-nav
             li.dropdown
               a.dropdown-toggle(data-toggle='dropdown', aria-expanded='true')
-                | Jobs 
+                | Menu 
                 b.caret
               ul#w3.dropdown-menu
                 li
-                  a(href='/jobs/vacancies', tabindex='-1') Vacancies
+                  a(href='#', tabindex='-1') Menu 1.1
                 li
-                  a(href='/jobs/internships', tabindex='-1') Internships
-                li
-                  a(href='/jobs/volunteering', tabindex='-1') Volunteering
+                  a(href='#', tabindex='-1') Menu 1.2
             li
-              a(href='/summer-schools') Summer schools
-            li.dropdown
-              a.dropdown-toggle(data-toggle='dropdown')
-                | Conferences 
-                b.caret
-              ul#w4.dropdown-menu
-                li
-                  a(href='/conferences/call-for-papers', tabindex='-1') Call for Papers
-                li
-                  a(href='/conferences/conference-programs', tabindex='-1') Conference Programs
-                li
-                  a(href='/conferences/abstracts', tabindex='-1') Abstracts
-            li.dropdown
-              a.dropdown-toggle(data-toggle='dropdown')
-                | Events 
-                b.caret
-              ul#w5.dropdown-menu
-                li
-                  a(href='/events/trainings', tabindex='-1') Trainings
-                li
-                  a(href='/events/seminars', tabindex='-1') Seminars
-                li
-                  a(href='/events/discussion', tabindex='-1') Discussion
-                li
-                  a(href='/events/meetings', tabindex='-1') Meetings
-                li
-                  a(href='/events/workshops', tabindex='-1') Workshops
-                li
-                  a(href='/events/symposium', tabindex='-1') Symposium
-                li
-                  a(href='/events/lecture', tabindex='-1') Lecture
-                li
-                  a(href='/events/presentation', tabindex='-1') Presentation
-                li
-                  a(href='/events/contest', tabindex='-1') Contest
-            li.dropdown
-              a.dropdown-toggle(data-toggle='dropdown')
-                | Opportunities 
-                b.caret
-              ul#w6.dropdown-menu
-                li
-                  a(href='/opportunities/grants', tabindex='-1') Grants
-                li
-                  a(href='/opportunities/scholarships', tabindex='-1') Scholarships
-                li
-                  a(href='/opportunities/fellowships', tabindex='-1') Fellowships
-                li
-                  a(href='/opportunities/awards', tabindex='-1') Awards
-                li
-                  a(href='/opportunities/study', tabindex='-1') Study
-                li
-                  a(href='/opportunities/online', tabindex='-1') Online
-                li
-                  a(href='/opportunities/prize', tabindex='-1') Prize
-                li
-                  a(href='/opportunities/publications', tabindex='-1') Publications
-                li
-                  a(href='/opportunities/competition', tabindex='-1') Competition
-                li
-                  a(href='/opportunities/financial-aid', tabindex='-1') Financial aid
-            li
-              a(href='/news') News
+              a(href='#') Menu 2
           ul.nav.navbar-nav.navbar-right
             if currentUser
               li.dropdown
                 a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                  | currentUser.name 
+                  | #{currentUser.name}
                   span.caret
                 ul.dropdown-menu
                   li
-                    a(href='#') My Favorites
+                    a(href='#') My Profile
                   li
                     a(href='#') Log Out
             else

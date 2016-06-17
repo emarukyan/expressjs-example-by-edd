@@ -1,13 +1,12 @@
 meta(charset='UTF-8')
-title ARMACAD - Never miss an opportunity!
+title Title
 meta(name='viewport', content='width=device-width, initial-scale=1')
 link(rel='shortcut icon', href='/favicon.png')
-meta(name='msvalidate.01', content='12B655DC777713D55E355A6477480D11')
-meta(name='description', content='ARMACAD is a platform for universities and academic centers to present scholarships, conferences, grants and study opportunities to an international audience.')
-meta(name='og:title', content='ARMACAD - Never miss an opportunity!')
-meta(name='og:description', content='ARMACAD is a platform for universities and academic centers to present scholarships, conferences, grants and study opportunities to an international audience.')
+meta(name='description', content=meta && meta.description ? meda.description : '')
+meta(name='og:title', content=meta && meta.title ? meda.title : '')
+meta(name='og:description', content=meta && meta.description ? meda.description : '')
 meta(name='og:url', content='/')
-meta(name='og:image', content='/images/armacad-logo.jpg')
+meta(name='og:image', content='/images/logo.jpg')
 
 
 // Latest compiled and minified CSS
@@ -16,9 +15,3 @@ link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css
 link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css', integrity='sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r', crossorigin='anonymous')
 
 link(rel='stylesheet', href='/stylesheets/style.css')
-
-link(rel='stylesheet', href='/static/css/bootstrap-select.css')
-link(rel='stylesheet', href='/static/css/jquery.datetimepicker.css')
-
-// Include Date Range Picker
-link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css')

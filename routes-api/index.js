@@ -1,9 +1,9 @@
 var express = require('express')
 var router = express.Router()
 
+/* GET list of whatever. */
 router.get('/', function (req, res, next) {
-  console.log(req.query)
-  res.render('front/index', { title: 'Armacad' })
+  res.json({status: 'ok'})
 })
 
 module.exports = router

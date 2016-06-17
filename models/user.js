@@ -1,4 +1,4 @@
-var bcrypt = require('bcrypt')
+var md5 = require('md5')
 
 module.exports = function (sequelize, DataTypes) {
   return sequelize.define('user', {
@@ -36,57 +36,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER(6),
       allowNull: false
     },
-    referrerid: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      defaultValue: '0'
-    },
-    earning_type: {
-      type: DataTypes.INTEGER(2),
-      allowNull: false
-    },
-    ipromoter_enabled: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: '0'
-    },
-    iproducer_enabled: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: '0'
-    },
-    is_banned: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: '0'
-    },
-    ban_days: {
-      type: DataTypes.INTEGER(4),
-      allowNull: false,
-      defaultValue: '0'
-    },
-    is_flagged: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: '0'
-    },
-    is_safemode: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: '0'
-    },
-    auth_key: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    password_reset_token: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    account_activation_token: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     created_at: {
       type: DataTypes.INTEGER(11),
       allowNull: false
@@ -112,13 +61,7 @@ module.exports = function (sequelize, DataTypes) {
     getterMethods: {},
     instanceMethods: {
       validPassword: function (password, cb) {
-        var hash = this.password_hash.replace(/^\$2y(.+)$/i, '\$2a$1')
-        bcrypt.compare(password, hash, function (err, res) {
-          if (err) {
-            console.log(err)
-          }
-          cb(res)
-        })
+        return md5(password) === this.password_hash
       }
     }
   })

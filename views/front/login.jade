@@ -1,17 +1,33 @@
 extends layout
 
 block content
-  h1 Log In
-
-  form(method='post', action='/auth/login')
-    .form-group
-      label(for='email') Email address
-      input#email.form-control(type='email', name='email', placeholder='Email')
-    .form-group
-      label(for='pass') Password
-      input#pass.form-control(type='password', name='password', placeholder='Password')
-    .checkbox
-      label
-        input(type='checkbox')
-        |  Remember Me
-    button.btn.btn-default(type='submit') Log In
+  div.row
+    div.col-md-5
+      h3 User login
+      form(method='post', action='/auth/login')
+        .form-group
+          label(for='email') Email address
+          input#email.form-control(type='email', name='email', placeholder='Email')
+        .form-group
+          label(for='pass') Password
+          input#pass.form-control(type='password', name='password', placeholder='Password')
+        .checkbox
+          label
+            input(type='checkbox')
+            |  Remember Me
+        button.btn.btn-default(type='submit') Log In
+        a(href="/auth/facebook" class="btn btn-primary pull-right") Facebook LogIn
+    div.col-md-1
+    div.col-md-5
+      h3 API login
+      form(method='post', action='/api/v1/auth')
+        .form-group
+          label(for='clientId') Client ID
+          input#email.form-control(type='text', name='clientId', placeholder='clientId: 1')
+        .form-group
+          label(for='clientSecret') ClientSecret
+          input#pass.form-control(type='text', name='clientSecret', placeholder='clientSecret: 1')
+        button.btn.btn-default(type='submit') Get Auth Key
+  p &nbsp;
+  p &nbsp;
+  p &nbsp;
