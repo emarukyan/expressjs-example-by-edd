@@ -37,11 +37,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     created_at: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false
     },
     updated_at: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false
     },
     fb_connect: {
